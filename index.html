@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Typing</title>
+</head>
+<body>
+    <div id="root"></div>
+
+<script src="js/react.development.js"></script>
+<script src="js/react-dom.development.js"></script>
+<script>
+    // apakah ingin set target?
+    // jika ingin set target, maka pilih target wpm
+    // mulai ngetik
+
+    const WpmForm = (props) => {
+        const handleFormSubmit = (e) => {
+            e.preventDefault();
+            if (inputWpm == 0) {
+                // No Target
+
+            }
+            else {
+                // Target
+                props.onChangeWpm(inputWpm);
+            }
+        }
+        return (
+            <form onSubmit={handleFormSubmit}>
+                <div>
+                    <p>Set your target here, 0 for no target:</p>
+                    <input type="text" placeholder="Wpm Target" value={inputWpm}/>
+                    <input type="submit" value="Submit" name="wpm" />
+                </div>
+            </form>
+        )
+        
+    }
+
+    const MyApp = () => {
+
+        
+        const handleTypingChange = (e) => {
+            
+        }
+    }
+</script>
+</body>
+</html>
