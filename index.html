@@ -9,7 +9,8 @@
 
 <script src="js/react.development.js"></script>
 <script src="js/react-dom.development.js"></script>
-<script>
+<script src="js/babel.js"></script>
+<script type="text/babel">
     // apakah ingin set target?
     // jika ingin set target, maka pilih target wpm
     // mulai ngetik
@@ -39,12 +40,15 @@
     }
 
     const MyApp = () => {
+        const inputWpm;
 
         
         const handleTypingChange = (e) => {
             
         }
+        return <WpmForm></WpmForm>
     }
+    ReactDOM.render(<MyApp />, document.getElementById('root'))
 </script>
 </body>
 </html>
