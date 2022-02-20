@@ -16,22 +16,32 @@
     // mulai ngetik
 
     const WpmForm = (props) => {
+        const [inputWpm, setInputWpm] = React.useState("");
+        const handleInputWpm = (e) => {
+            setInputWpm(e.target.value);
+        }
+
         const handleFormSubmit = (e) => {
             e.preventDefault();
             if (inputWpm == 0) {
                 // No Target
+                console.log("Wpm : ", 0)
 
             }
             else {
                 // Target
-                props.onChangeWpm(inputWpm);
+                // props.onChangeWpm(inputWpm);
+                console.log("Wpm : ", inputWpm)
             }
         }
         return (
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <p>Set your target here, 0 for no target:</p>
-                    <input type="text" placeholder="Wpm Target" value={inputWpm}/>
+                    <input type="text" 
+                        placeholder="Wpm Target" 
+                        value={inputWpm}
+                        onChange={handleInputWpm} />
                     <input type="submit" value="Submit" name="wpm" />
                 </div>
             </form>
@@ -40,9 +50,6 @@
     }
 
     const MyApp = () => {
-        const inputWpm;
-
-        
         const handleTypingChange = (e) => {
             
         }
