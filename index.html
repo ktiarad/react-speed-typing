@@ -49,11 +49,37 @@
         
     }
 
+    const SpeedTypingForm = (props) => {
+        const [inputWord, setInputWord] = React.useState("");
+
+        const handleInputWord = (e) => {
+            setInputWord(e.target.value);
+        }
+
+        return (
+            <form>
+                <div>
+                    <p>Typing Place:</p>
+                    <input type="text" 
+                        placeholder={inputWord} 
+                        value={inputWord}
+                        onChange={handleInputWord} />
+                </div>
+            </form>
+        )
+
+    }
+
     const MyApp = () => {
         const handleTypingChange = (e) => {
             
         }
-        return <WpmForm></WpmForm>
+        return (
+            <div class="containter">
+                <WpmForm></WpmForm>
+                <SpeedTypingForm></SpeedTypingForm>
+            </div>
+        ) 
     }
     ReactDOM.render(<MyApp />, document.getElementById('root'))
 </script>
